@@ -9,8 +9,9 @@ from .views import (AllBlogsListView, ApplaudDetailView, ApplaudPostView,
 
 urlpatterns = [
     # Blog urls
-    path('all/', AllBlogsListView.as_view(), name='all_blogs'),
-    path('blogpost/', BlogPostView.as_view(), name='post_a_blog'),
+    path('', AllBlogsListView.as_view(), name='all_blogs'),
+    path('blogs', AllBlogsListView.as_view(), name='all_blogs'),
+    path('blog/post/', BlogPostView.as_view(), name='post_a_blog'),
     path('blog/<uuid:blog_id>/', BlogDetailView.as_view(), name='blog_detail'),
     path('userblogs/', UserBlogsListView.as_view(), name='blogs_of_user'),
     path('search/', SearchBlogView.as_view(), name='search_a_blog'),
